@@ -85,6 +85,31 @@ const Index = () => {
     }
   ];
 
+  const testimonials = [
+    {
+      name: 'Елена Смирнова',
+      text: 'Спасибо за чуткое отношение и профессионализм. В такой трудный момент вы взяли на себя все организационные вопросы.',
+      rating: 5
+    },
+    {
+      name: 'Михаил Петров',
+      text: 'Всё прошло достойно и без суеты. Личный куратор помог с документами и был на связи 24/7. Рекомендую.',
+      rating: 5
+    },
+    {
+      name: 'Ольга Васильева',
+      text: 'Организация на высшем уровне. Особая благодарность за деликатность и внимание к деталям.',
+      rating: 5
+    }
+  ];
+
+  const certificates = [
+    { title: 'Лицензия Минздрава РФ', number: '№ ЛО-77-01-020945', icon: 'Award' },
+    { title: 'Сертификат ISO 9001', number: '№ РОСС RU.31469.04ИЖО0', icon: 'BadgeCheck' },
+    { title: 'Членство в СРО', number: '№ 1234567890', icon: 'ShieldCheck' },
+    { title: 'Страхование ответственности', number: 'Полис № 12345/2024', icon: 'FileCheck' }
+  ];
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
@@ -283,7 +308,60 @@ const Index = () => {
           </div>
         </section>
 
-        <section id="info" className="py-20 px-4">
+        <section id="certificates" className="py-20 px-4 bg-card">
+          <div className="container mx-auto max-w-6xl">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Лицензии и сертификаты</h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              Наша деятельность полностью лицензирована и соответствует всем стандартам качества
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {certificates.map((cert, index) => (
+                <Card key={index} className="hover:border-primary/50 transition-all duration-300">
+                  <CardContent className="p-6 text-center">
+                    <div className="mb-4 inline-flex p-4 bg-primary/10 rounded-full">
+                      <Icon name={cert.icon} className="text-primary" size={32} />
+                    </div>
+                    <h3 className="font-semibold mb-2">{cert.title}</h3>
+                    <p className="text-sm text-muted-foreground">{cert.number}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="py-20 px-4">
+          <div className="container mx-auto max-w-6xl">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">Отзывы клиентов</h2>
+            <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+              Нам доверяют в самые трудные моменты
+            </p>
+            <div className="grid md:grid-cols-3 gap-8">
+              {testimonials.map((testimonial, index) => (
+                <Card key={index} className="hover:shadow-lg transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center">
+                        <Icon name="User" className="text-primary" size={24} />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold">{testimonial.name}</h3>
+                        <div className="flex gap-1">
+                          {[...Array(testimonial.rating)].map((_, i) => (
+                            <Icon key={i} name="Star" className="text-primary fill-primary" size={14} />
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-muted-foreground italic">"{testimonial.text}"</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="info" className="py-20 px-4 bg-card">
           <div className="container mx-auto max-w-4xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Полезная информация</h2>
             <Accordion type="single" collapsible className="space-y-4">
@@ -301,9 +379,21 @@ const Index = () => {
           </div>
         </section>
 
-        <section id="contacts" className="py-20 px-4 bg-card">
+        <section id="contacts" className="py-20 px-4">
           <div className="container mx-auto max-w-6xl">
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Контакты</h2>
+            <div className="mb-12 rounded-lg overflow-hidden border border-border h-96">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.4449607873587!2d37.61773261593086!3d55.75582998055598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a50b315e573%3A0xa886bf5a3d9b2e68!2z0JzQvtGB0LrQstCwLCDQoNC-0YHRgdC40Y8!5e0!3m2!1sru!2sru!4v1234567890123!5m2!1sru!2sru"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Карта офиса"
+              />
+            </div>
             <div className="grid md:grid-cols-2 gap-12">
               <div className="space-y-8">
                 <div>

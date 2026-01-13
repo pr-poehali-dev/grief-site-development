@@ -34,6 +34,12 @@ const Index = () => {
       price: 'от 35 000 ₽'
     },
     {
+      icon: 'Mountain',
+      title: 'Памятники',
+      description: 'Изготовление и установка памятников из гранита и мрамора любой сложности',
+      price: 'от 25 000 ₽'
+    },
+    {
       icon: 'FileText',
       title: 'Оформление документов',
       description: 'Полное сопровождение: свидетельства, разрешения, справки',
@@ -69,7 +75,7 @@ const Index = () => {
   const faqItems = [
     {
       question: 'Как вызвать агента?',
-      answer: 'Позвоните по телефону +7 (495) 123-45-67 или заполните форму на сайте. Наш агент приедет в течение часа.'
+      answer: 'Позвоните по телефону +7 (999) 977-37-11 или заполните форму на сайте. Наш агент приедет в течение часа.'
     },
     {
       question: 'Какие документы нужны?',
@@ -384,7 +390,7 @@ const Index = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">Контакты</h2>
             <div className="mb-12 rounded-lg overflow-hidden border border-border h-96">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2244.4449607873587!2d37.61773261593086!3d55.75582998055598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a50b315e573%3A0xa886bf5a3d9b2e68!2z0JzQvtGB0LrQstCwLCDQoNC-0YHRgdC40Y8!5e0!3m2!1sru!2sru!4v1234567890123!5m2!1sru!2sru"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2714.897!2d39.746584!3d47.138847!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40e3bf1b0c5d7891%3A0x1234567890abcdef!2z0YPQuy4g0JrRg9C50LHRi9GI0LXQstCwLCA3Nywg0JHQsNGC0LDQudGB0LosINCg0L7RgdGC0L7QstGB0LrQsNGPINC-0LHQuy4sIDM0Njg4MA!5e0!3m2!1sru!2sru!4v1234567890123!5m2!1sru!2sru"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
@@ -401,7 +407,7 @@ const Index = () => {
                     <Icon name="MapPin" className="text-primary" size={24} />
                     Адрес
                   </h3>
-                  <p className="text-muted-foreground">г. Москва, ул. Примерная, д. 123</p>
+                  <p className="text-muted-foreground">г. Батайск, ул. Куйбышева, д. 77</p>
                   <p className="text-sm text-muted-foreground mt-2">Ежедневно, круглосуточно</p>
                 </div>
                 <div>
@@ -410,11 +416,8 @@ const Index = () => {
                     Телефоны
                   </h3>
                   <div className="space-y-2">
-                    <a href="tel:+74951234567" className="block text-lg hover:text-primary transition-colors">
-                      +7 (495) 123-45-67 — срочный вызов
-                    </a>
-                    <a href="tel:+74951234568" className="block text-muted-foreground hover:text-primary transition-colors">
-                      +7 (495) 123-45-68 — общий
+                    <a href="tel:+79999773711" className="block text-lg hover:text-primary transition-colors">
+                      +7 (999) 977-37-11 — круглосуточно
                     </a>
                   </div>
                 </div>
@@ -507,10 +510,10 @@ const Index = () => {
             <div>
               <h4 className="font-semibold mb-4">Контакты</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
-                <li>г. Москва, ул. Примерная, 123</li>
+                <li>г. Батайск, ул. Куйбышева, 77</li>
                 <li>
-                  <a href="tel:+74951234567" className="hover:text-primary transition-colors">
-                    +7 (495) 123-45-67
+                  <a href="tel:+79999773711" className="hover:text-primary transition-colors">
+                    +7 (999) 977-37-11
                   </a>
                 </li>
                 <li>
